@@ -1,0 +1,83 @@
+<html>
+<head>
+<title>
+	first page
+</title>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+	.c1{
+		background-image:url('aaa.jpg');
+		background-repeat:no-repeat;
+		background-size:cover;
+		background-color:lightgrey;
+		
+	}
+	.c2{
+		font-size:100px;
+		padding-left:10%;
+		color:Black;
+		font-style: italic;
+		text-shadow: 1px 1px 2px black, 0 0 25px grey, 0 0 5px blue;
+		}
+	
+	div>button{
+		margin-left:40%;
+		font-size:35px;
+		background: linear-gradient(to top right, #0099ff 0%, #ccffff 100%);
+		border: 1px solid DeepSkyBlue;
+		transition-duration: 0.4s;
+	}
+	button:hover{
+		opacity : 0.5;
+	}
+	.c3{
+		font-size:25px;
+		overflow: hidden;
+		position: relative;
+		background: lightgrey;
+		color:Black;
+		border: 1px solid Black;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		line-height:30px;
+		text-align: center;
+		height:30px;	
+		
+	}
+h1{
+	margin-left:215px;
+}
+img{
+  border-radius: 70%;
+}
+a{
+	
+</style>
+</head>
+
+<body class="c1";>
+	<br>
+	<b class="c2";>WELCOME</b><br>
+	<h1><i>Placement Eligiblity Criteria</i></h1>
+	<div style=" padding:30px 17% 60px; margin-left:10px;">
+	<img src="placement.png" height="130px" width="310px" ;>
+	</div><br>
+	<div class="row">
+	<div class="col-sm-2">
+	</div>
+	<div class="col-sm-3">
+	<button type="button" class="btn btn-info btn-lg"><a href="trail.php">NEXT</a></button>      
+	</div><br><br>
+	</div><br><br><br><br><br>
+	<div class="c3";>
+	<b><marquee behavior="scroll" direction="left" scrollamount="20">Choose a job you love, and you will never have to work a day in your life. </marquee></b>
+	</div>
+	
+</body>
+</html>	

@@ -1,0 +1,158 @@
+ <?php
+  session_start();
+  //$_SESSION['PRN']=$_POST["PRN"];
+ if(!isset($_SESSION['PRN']))
+    {
+      header('Location:./1.php');
+    }
+    
+    
+    //document.getElementById('demo').style.fontSize='55px'"
+   
+  
+?>
+<!DOCTYPE html>
+<head>
+  <title>Placement Eligibility</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script src="../jquery.js"></script>
+
+  <style>
+  .form11{
+  border-radius:15px;
+  background-position:center;
+  text-align:center;
+  width:25%;
+  margin:auto;
+  border:1px solid black;
+  padding:20px;
+}
+
+  .k{
+  background-image: url('pic9.jpg');
+  background-position: center;
+  height:800px;
+  background-repeat:repeat;
+  background-size: cover;
+}
+
+</style>
+</head>
+
+<body>
+   <div class="k">
+  <div class="container">
+    <center>
+  <h1 id="demo"></h1>
+  <h1 id="demo1"></h1>
+
+
+   <script>
+function js() {
+  document.getElementById("demo").innerHTML = " SORRY!!! YOU ARE NOT ELIGIBLE";
+}
+function js1() {
+  document.getElementById("demo1").innerHTML = " CONGRATULATIONS!!! YOU ARE ELIGIBLE" ;
+}
+</script>
+  <div>
+  <div>
+  <h1>Check your information</h1>
+</div></div>
+    <div class="form11">
+    <div id="T1" onmouseover="mouseOver()" onmouseout="mouseOut()">
+<?php
+    $prn=$_SESSION['PRN'];
+    
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "form";
+
+    // Create connection
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    // Check connection
+    if (!$conn) {
+      die("Connection failed: " . mysqli_connect_error());
+    }
+
+    $sql = "SELECT * FROM next where PRN='$prn'";
+    $result = mysqli_query($conn, $sql);
+    //echo "".$_SESSION['Uname']."";
+    if (mysqli_num_rows($result) >= 0) {
+      // output data of each row
+      while($row = mysqli_fetch_assoc($result)) {
+        echo "YOUR NAME IS      :  " . $row["Name"]."<br>"."<br>";
+        echo "PRN               :               " . $row["PRN"]."<br>"."<br>" ;
+        echo "SSC %             :  " . $row["10thpercent"]."<br> "."<br>";
+        echo "HSC %             :  " . $row["12thpercent"]."<br> "."<br>";
+        echo "CGPA              :  " . $row["cgpa"]."<br> "."<br>";
+        echo "INTERNSHIP COUNT  :  " . $row["intern"]."<br> "."<br>";
+        echo "GAP YEARS         :  " . $row["gap"]."<br> "."<br>";
+        echo "CERTIFICATE COUNT :  " . $row["certificates"]."<br> "."<br>";
+        echo "BACKLOG COUNT     :  " . $row["backlog"]."<br> ";
+        if ($row["10thpercent"]>60 and $row["12thpercent"]>60 and $row["cgpa"]>6.67 and $row["intern"]>0 and $row["gap"]<1 and $row["backlog"]<4){
+           echo '<script type="text/javascript">js1();</script>';
+        }
+        else 
+        {
+          echo '<script type="text/javascript">js();</script>';
+
+        
+        // <html> <body><h1>you are eligible</h1></body>body></html>
+            
+
+
+        }
+        
+        }
+    } else {
+      echo "0 results";
+    }
+    
+    mysqli_close($conn);
+  ?>
+</div>
+</div>
+<p>
+
+</p>
+   
+
+  <a href="end.php"><input type="button" value="Log Out" class="btn btn-success"></a>
+<p>
+
+</p>
+<script>
+  {
+  window.alert("Please note that-This placement eligibility can be decided on the requirements of top 50 MNC companies");
+}
+
+</script>
+<script>
+function mouseOver() {
+  document.getElementById("T1").style.color = "#e60073";
+  document.getElementById("demo").style.color = "#e60073";
+  document.getElementById("demo1").style.color = "#e60073";
+  }
+
+function mouseOut() {
+  document.getElementById("T1").style.color = "black";
+  document.getElementById("demo").style.color = "black";
+  document.getElementById("demo1").style.color = "black";
+
+  }
+  
+</script>
+</center>
+    </div>
+  </div>
+</body>
+</html>
+
+ 
