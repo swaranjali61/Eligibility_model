@@ -2,7 +2,7 @@
 session_start();
     if(!isset($_SESSION['Uname']))
     {
-      header('Location:./1.php');
+      header('Location:./1.html');
     }
     //document.getElementById('demo').style.fontSize='55px'"
 
@@ -105,7 +105,7 @@ if (isset($_POST['submit']))
       $sql1 = "INSERT INTO next VALUES ('$Name', '$PRN', '$tenpercent', '$thpercent', '$cgpa', '$intern','$gap','$certificates', '$backlog')";
     //$sql="INSERT INTO `next1`(`$Name`, `$PRN`, `$tenpercent`, `$thpercent`, `$cgpa`, `$certificates`, `$backlog`)";
         mysqli_query($conn, $sql1);
-        header('Location:page.php');
+        header('Location:page.html');
     }
     mysqli_close($conn);
   }
@@ -183,7 +183,7 @@ if (isset($_POST['submit']))
     <button type="submit" name="submit" class="btn btn-primary">submit</button>
   </div>
   <div class="col-sm-2">
-    <input type="button" class="btn btn-primary" value="Result" onclick="window.location.href='page.php'">
+    <input type="button" class="btn btn-primary" value="Result" onclick="window.location.href='page.html'">
   </div>
 </div>
  

@@ -1,3 +1,5 @@
+
+
 <?php
 session_start();
 $flag=True;
@@ -104,7 +106,7 @@ if (isset($_POST['submit']))
     {
          $sql1 = "INSERT INTO reg VALUES ('$fName','$mName','$lName','$Id', '$mobile', '$usernm', '$pass', '$cpassword')";
          mysqli_query($conn, $sql1);
-          header('Location:trail.php');
+          header('Location:trail.html');
 
     }
     mysqli_close($conn);
@@ -174,7 +176,7 @@ if (isset($_POST['submit']))
     <input type="submit" name="submit" value="submit" class="btn btn-primary">
   </div>
   <div class="col-sm-2">
-    <a href="trail.php">Already Registered?? </a>
+    <a href="trail.html">Already Registered?? </a>
    </div> 
     </form>
   </div>
